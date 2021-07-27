@@ -14,7 +14,7 @@ class TaskController extends Controller
 { 
     public function index()
     {
-        //abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $tasks = Task::all();
 
@@ -23,13 +23,15 @@ class TaskController extends Controller
 
     public function create()
     {
-       // abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+       abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('tasks.create');
     }
 
     public function store(StoreTaskRequest $request)
     {
+        abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
         Task::create($request->validated());
 
         return redirect()->route('tasks.index');
@@ -37,14 +39,14 @@ class TaskController extends Controller
 
     public function show(Task $task)
     {
-       // abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('tasks.show', compact('task'));
     }
 
     public function edit(Task $task)
     {
-        //abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return view('tasks.edit', compact('task'));
     }
@@ -58,7 +60,7 @@ class TaskController extends Controller
 
     public function destroy(Task $task)
     {
-        //abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $task->delete();
 
