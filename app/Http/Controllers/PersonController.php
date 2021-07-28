@@ -57,7 +57,7 @@ class PersonController extends Controller
      */
     public function edit(person $person)
     {
-        //
+        return view('person.edit');
     }
 
     /**

@@ -17,24 +17,24 @@
             <div class="grid grid-cols-6 gap-6">
               
               <div class="col-span-6 sm:col-span-3">
-                <label for="first-name" class="block  font-semibold text-gray-700">İsim Soyisim</label>
-                <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <label for="name" class="block  font-semibold text-gray-700">İsim Soyisim</label>
+                <input type="text" name="name" id="name" autocomplete="given-name" class="hover:ring-1 hover:ring-indigo-500 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
               
               <div class="col-span-6 sm:col-span-3">
                 <label for="email-address" class="block  font-semibold text-gray-700">Email Adres</label>
-                <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <input type="text" name="email-address" id="email-address" autocomplete="email" class=" hover:ring-1 hover:ring-indigo-500 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
 
               <div class="col-span-6 sm:col-span-3">
-                <label for="last-name" class="block  font-semibold text-gray-700">Telefon</label>
-                <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <label for="phone" class="block  font-semibold text-gray-700">Telefon</label>
+                <input type="text" name="phone" id="phone" autocomplete="phone" class="hover:ring-1 hover:ring-indigo-500 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
               
               
               <div class="col-span-6 sm:col-span-3">
-                <label for="country" class="block  font-semibold text-gray-700">Durum</label>
-                <select id="country" name="country" autocomplete="country" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <label for="status" class="block  font-semibold text-gray-700">Durum</label>
+                <select id="status" name="status" autocomplete="status" class="hover:ring-1 hover:ring-indigo-500 mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   <option>Aktif</option>
                   <option>Pasif</option>
                 </select>
@@ -42,8 +42,8 @@
               
               
               <div class="col-span-6 sm:col-span-3">
-                <label for="country" class="block  font-semibold text-gray-700">Şirket</label>
-                <select id="country" name="country" autocomplete="country" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <label for="company" class="block  font-semibold text-gray-700">Şirket</label>
+                <select id="company" name="company" autocomplete="company" class="hover:ring-1 hover:ring-indigo-500 mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                   <option>Limak</option>
                   <option>Cengiz</option>
                   <option>Kolin</option>
@@ -51,8 +51,8 @@
               </div>
               
               <div class="col-span-6 sm:col-span-3">
-                <label for="last-name" class="block  font-semibold text-gray-700">Ünvan</label>
-                <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <label for="title" class="block  font-semibold text-gray-700">Ünvan</label>
+                <input type="text" name="title" id="title" autocomplete="family-name" class="mt-1 hover:ring-1 hover:ring-indigo-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
 
             </div>
