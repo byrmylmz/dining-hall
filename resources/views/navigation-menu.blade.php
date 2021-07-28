@@ -13,26 +13,45 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Özet') }}
                     </x-jet-nav-link>
                 </div>
-                @can('task_access')
+
+                
+                
+                @can('user_access')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks.*')">
-                        {{ __('Tasks') }}
+                    <x-jet-nav-link href="{{ route('person.index') }}" :active="request()->routeIs('person.*')">
+                        {{ __('Kişiler') }}
                     </x-jet-nav-link>
                 </div>
                 @endcan
-           
+                
+                @can('user_access')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('company.index') }}" :active="request()->routeIs('company.*')">
+                        {{ __('Şirketler') }}
+                    </x-jet-nav-link>
+                </div>
+                @endcan
+                
                 @can('user_access')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.*')">
-                        {{ __('Users') }}
+                        {{ __('Kullanıcılar') }}
+                    </x-jet-nav-link>
+                </div>
+                @endcan
+                
+                @can('task_access')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('tasks.index') }}" :active="request()->routeIs('tasks.*')">
+                        {{ __('Görevler') }}
                     </x-jet-nav-link>
                 </div>
                 @endcan
             </div>
-
+            
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())

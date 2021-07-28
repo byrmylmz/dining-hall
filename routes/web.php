@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\PersonController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +26,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('tasks', TaskController::class);
-    Route::resource('users', UserController::class);
+    Route::resource('/person',PersonController::class);
+    Route::resource('/company',CompanyController::class);
+    Route::resource('/tasks', TaskController::class);
+    Route::resource('/users', UserController::class);
 });
+
