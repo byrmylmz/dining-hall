@@ -1,7 +1,7 @@
     
 <div class="p-6  bg-white border-b border-gray-200 flex items-center">
     <div class="flex ">
-        <x-jet-application-logo class="block h-20 w-auto" />  
+        <x-jet-application-logo class="block h-12 w-auto" />  
        
     </div>
     <div class="flex text-4xl font-semibold px-2">Teknokent</div>
@@ -40,14 +40,15 @@
 
                 <div class="mx-5">
                     <h4 class="text-2xl font-semibold text-gray-700">8,282</h4>
-                    <div class="text-gray-500">New Users</div>
+                    <div class="text-gray-500">Toplam Kayıtlı Kişi</div>
                 </div>
             </div>
         </div>
 
         <div class="w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 sm:mt-0">
             <div class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white">
-                <div class="p-3 rounded-full bg-orange-600 bg-opacity-75">
+                <div class="p-3 rounded-full bg-indigo-600 bg-opacity-75">
+               
                     <svg class="h-8 w-8 text-white" viewBox="0 0 28 28" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -63,8 +64,8 @@
                 </div>
 
                 <div class="mx-5">
-                    <h4 class="text-2xl font-semibold text-gray-700">200,521</h4>
-                    <div class="text-gray-500">Total Orders</div>
+                    <h4 class="text-2xl font-semibold text-gray-700">52</h4>
+                    <div class="text-gray-500">Toplam Şirket Sayısı</div>
                 </div>
             </div>
         </div>
@@ -83,8 +84,8 @@
                 </div>
 
                 <div class="mx-5">
-                    <h4 class="text-2xl font-semibold text-gray-700">215,542</h4>
-                    <div class="text-gray-500">Available Products</div>
+                    <h4 class="text-2xl font-semibold text-gray-700">1250</h4>
+                    <div class="text-gray-500">Kartlardaki Toplam Bakiye</div>
                 </div>
             </div>
         </div>

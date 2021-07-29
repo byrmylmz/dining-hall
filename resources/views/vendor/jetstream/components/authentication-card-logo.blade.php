@@ -1,3 +1,3 @@
-<a href="/">
-   <img src="http://fusetheme.com/static/assets/images/fuse.svg" alt="">
-</a>
+
+   <img src="{{ asset('img/logo.svg') }}" alt="" {{ $attributes }}>
+
