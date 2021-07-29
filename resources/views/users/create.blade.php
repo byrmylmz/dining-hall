@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Create User
+            Kullanıcı Ekle
         </h2>
     </x-slot>
 
@@ -39,7 +39,7 @@
 
                         <div class="px-4 py-5 bg-white sm:p-6">
                             <label for="roles" class="block font-medium text-sm text-gray-700">Roles</label>
-                            <select name="roles[]" id="roles" class="form-multiselect block rounded-md shadow-sm mt-1 block w-full" multiple="multiple">
+                            <select name="roles[]" id="roles" class="form-multiselect block rounded-md shadow-sm mt-1  w-full" multiple="multiple">
                                 @foreach($roles as $id => $role)
                                     <option value="{{ $id }}"{{ in_array($id, old('roles', [])) ? ' selected' : '' }}>{{ $role }}</option>
                                 @endforeach
@@ -50,9 +50,7 @@
                         </div>
 
                         <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
-                            <button class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">
-                                Create
-                            </button>
+                            <x-submit-button>Kaydet</x-submit-button>
                         </div>
                     </div>
                 </form>

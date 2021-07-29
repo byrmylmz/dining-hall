@@ -11,8 +11,8 @@
 <div class="flex flex-col container max-w-6xl  mt-5">
   <div class="flex items-center mb-2">
     <a href="{{ route('person.create') }}">
-      <button  class="bg-indigo-600 rounded px-2 py-2 text-sm text-white hover:bg-indigo-700 ring-1 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Kişi Ekle </button>
-    </a>  
+      <x-button>Kişi Ekle</x-button>   
+     </a>  
   </div>
   <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -24,10 +24,19 @@
                 İSİM
               </th>
               <th scope="col" class="px-6 py-3 text-left text-sm font-semibold text-gray-500 uppercase tracking-wider">
-                ŞİRKET / POZISYON
+                ŞİRKET
+              </th>
+              <th scope="col" class="px-6 py-3 text-left text-sm font-semibold text-gray-500 uppercase tracking-wider">
+                POZİSYON
               </th>
               <th scope="col" class="px-6 py-3 text-left text-sm font-semibold text-gray-500 uppercase tracking-wider">
                 DURUM
+              </th>
+              <th scope="col" class="px-6 py-3 text-left text-sm font-semibold text-gray-500 uppercase tracking-wider">
+                EMAIL
+              </th>
+              <th scope="col" class="px-6 py-3 text-left text-sm font-semibold text-gray-500 uppercase tracking-wider">
+                Kart Id
               </th>
               <th scope="col" class="px-6 py-3 text-left text-sm font-semibold text-gray-500 uppercase tracking-wider">
                 BAKIYE
@@ -48,23 +57,36 @@
                     <div class="text-sm font-medium text-gray-900">
                       Jane Cooper
                     </div>
-                    <div class="text-sm text-gray-500">
-                      jane.cooper@example.com
-                    </div>
                   </div>
                 </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-900">Regional Paradigm Technician</div>
-                <div class="text-sm text-gray-500">Optimization</div>
+              
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <span class=" text-sm text-gray-900">
+                  Developer
+                </span>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                 <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                   Active
                 </span>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <span class="text-sm text-gray-900">
+                  janecooper@gmail.com
+                </span>
               </td>
-              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                50
+              <td class="px-6 py-4 whitespace-nowrap">
+                <span class="text-sm text-gray-900">
+                  102585
+                </span>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap ">
+                <span class="text-sm text-gray-900">
+                  50
+                </span>
               </td>
               <td class="">
                 <div class="flex justify-between pr-5 ">
