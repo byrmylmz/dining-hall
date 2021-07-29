@@ -27,6 +27,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('/person', PersonController::class);
+    ///person/balance/{person}
+    Route::get('/balance', [PersonController::class,'balance'])->name('person.balance');
+    Route::post('/balance/{person}', [PersonController::class,'addBalance'])->name('person.addBalance');
     Route::resource('/company', CompanyController::class);
     Route::resource('/tasks', TaskController::class);
     Route::resource('/users', UserController::class);

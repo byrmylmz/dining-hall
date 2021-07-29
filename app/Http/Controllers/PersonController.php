@@ -24,7 +24,7 @@ class PersonController extends Controller
      */
     public function create()
     {
-       return view('person.create');
+        return view('person.create');
     }
 
     /**
@@ -79,6 +79,24 @@ class PersonController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(person $person)
+    {
+        //
+    }
+
+
+    public function balance()
+    {
+        return view('person.balance');
+    }
+    
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\person  $person
+     * @return \Illuminate\Http\Response
+     */
+    
+    public function addBalance(person $person)
     {
         //
     }
