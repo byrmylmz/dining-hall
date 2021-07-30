@@ -13,8 +13,9 @@ class CompanyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('company.index');
+    {   
+        $companies=company::all();
+        return view('company.index',compact('companies'));
     }
 
     /**
@@ -34,8 +35,10 @@ class CompanyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        //validation 
+        company::create($request->all()+['users_id'=>auth()->id()]);
+        return redirect()->route('company.index');
     }
 
     /**
@@ -57,7 +60,7 @@ class CompanyController extends Controller
      */
     public function edit(company $company)
     {
-        return view('company.edit');
+        return view('company.edit',compact('company'));
     }
 
     /**
@@ -69,7 +72,8 @@ class CompanyController extends Controller
      */
     public function update(Request $request, company $company)
     {
-        //
+        $company->update($request->all()+['users_id'=>auth()->id()]);
+        return redirect()->route('company.index');
     }
 
     /**
@@ -78,8 +82,9 @@ class CompanyController extends Controller
      * @param  \App\Models\company  $company
      * @return \Illuminate\Http\Response
      */
-    public function destroy(company $company)
+    public function destroy(company $company )
     {
-        //
+        $company->delete();
+        return redirect()->route('company.index');
     }
 }

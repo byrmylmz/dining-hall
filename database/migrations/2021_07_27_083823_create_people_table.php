@@ -15,6 +15,14 @@ class CreatePeopleTable extends Migration
     {
         Schema::create('people', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('status');
+            $table->string('position');
+            $table->string('card_id');
+            $table->foreignId('users_id')->constrained();
+            $table->foreignId('companies_id')->constrained();
             $table->timestamps();
         });
     }
