@@ -1,0 +1,83 @@
+
+<x-app-layout>
+  <x-slot name="header">
+      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+          Kişi Ekle
+      </h2>
+  </x-slot>
+
+<div class="container mt-5 max-w-6xl">
+<div class=" mt-10 sm:mt-0">
+  <div class="md:grid md:grid-cols-2 md:gap-6">
+    <div class="mt-5 md:mt-0 md:col-span-2">
+     
+      <form action="{{ route('person.update',$person->id) }}" method="POST">
+        @method('PUT')
+        @csrf
+        <div class="shadow overflow-hidden sm:rounded-md">
+          <div class="px-4 py-5 bg-white sm:p-6">
+            <div class="grid grid-cols-6 gap-6">
+              
+              <div class="col-span-6 sm:col-span-3">
+                <label for="name" class="block  font-semibold text-gray-700">İsim Soyisim</label>
+                <input value="{{ $person->name }}" type="text" name="name" id="name" autocomplete="given-name" class="hover:ring-1 hover:ring-indigo-500 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
+              </div>
+              
+              <div class="col-span-6 sm:col-span-3">
+                <label for="email" class="block  font-semibold text-gray-700">Email Adres</label>
+                <input value="{{ $person->email }}" type="text" name="email" id="email" autocomplete="email" class=" hover:ring-1 hover:ring-indigo-500 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
+              </div>
+
+              <div class="col-span-6 sm:col-span-3">
+                <label for="phone" class="block  font-semibold text-gray-700">Telefon</label>
+                <input value="{{ $person->phone }}" type="text" name="phone" id="phone" autocomplete="phone" class="hover:ring-1 hover:ring-indigo-500 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
+              </div>
+              
+              <div class="col-span-6 sm:col-span-3">
+                <label for="status" class="block  font-semibold text-gray-700">Durum</label>
+                <select id="status" name="status" autocomplete="status" class="hover:ring-1 hover:ring-indigo-500 mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                  <option @if(($person->status)==='Aktif') selected @endif>Aktif</option>
+                  <option @if(($person->status)==='Pasif') selected @endif>Pasif</option>
+                </select>
+              </div>
+              
+              <div class="col-span-6 sm:col-span-3">
+                <label for="company" class="block  font-semibold text-gray-700">Şirket</label>
+                <select id="company" name="company" autocomplete="company" class="hover:ring-1 hover:ring-indigo-500 mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                  @foreach ($companies as $company )
+                     <option value="{{ $company->id }}" @if(($company->id)===($person->companies_id)) selected @endif>{{ $company->name }}</option>
+                  @endforeach
+                </select>
+              </div>
+              
+              <div class="col-span-6 sm:col-span-3">
+                <label for="position" class="block  font-semibold text-gray-700">Pozisyon</label>
+                <input value="{{ $person->position }}" type="text" name="position" id="position" autocomplete="family-name" class="mt-1 hover:ring-1 hover:ring-indigo-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
+              </div>
+
+              <div class="col-span-6 sm:col-span-3">
+                <label for="card_id" class="block  font-semibold text-gray-700">Kart Id</label>
+                <input value="{{ $person->card_id }}" type="text" name="card_id" id="card_id" autocomplete="family-name" class="mt-1 hover:ring-1 hover:ring-indigo-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
+              </div>
+             
+            </div>
+          </div>
+          <div class="flex justify-between px-4 py-3 bg-gray-50  sm:px-6 ">
+            <a href="{{ route('person.index') }}">
+              <x-button>Geri</x-button>             
+            </a>
+            <x-submit-button>Kaydet</x-submit-button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+</x-app-layout>
+
+
+

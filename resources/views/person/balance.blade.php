@@ -18,7 +18,10 @@
               
               <div class="col-span-6 sm:col-span-6">
                 <label for="title" class="block  font-semibold text-gray-700">Bakiye</label>
-                <input type="text" name="title" id="title" autocomplete="family-name" class="mt-1 hover:ring-1 hover:ring-indigo-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+               
+                    
+                <input value="" type="text" name="title" id="title" autocomplete="family-name" class="mt-1 hover:ring-1 hover:ring-indigo-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+            
               </div>
 
             </div>
