@@ -12,7 +12,7 @@ class dahsboardController extends Controller
 
         $totalPerson=DB::table('people')->count();
         $totalCompany=DB::table('companies')->count();
-        $totalBalance=DB::table('people')->select( DB::raw('SUM(cast(balance as double )) as balance '))->first();
+        $totalBalance=DB::table('people')->select( DB::raw('SUM(cast(balance as integer )) as balance '))->first();
 
         return view('dashboard',compact('totalPerson','totalCompany','totalBalance'));    
     }
