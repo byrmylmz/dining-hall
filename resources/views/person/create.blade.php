@@ -24,12 +24,12 @@
               
               <div class="col-span-6 sm:col-span-3">
                 <label for="email" class="block  font-semibold text-gray-700">Email Adres</label>
-                <input type="text" name="email" id="email" autocomplete="email" class=" hover:ring-1 hover:ring-indigo-500 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
+                <input type="email" name="email" id="email" autocomplete="email" class=" hover:ring-1 hover:ring-indigo-500 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
               </div>
 
               <div class="col-span-6 sm:col-span-3">
                 <label for="phone" class="block  font-semibold text-gray-700">Telefon</label>
-                <input type="text" name="phone" id="phone" autocomplete="phone" class="hover:ring-1 hover:ring-indigo-500 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
+                <input type="number" name="phone" id="phone" autocomplete="phone" class="hover:ring-1 hover:ring-indigo-500 mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
               </div>
               
               <div class="col-span-6 sm:col-span-3">
@@ -56,7 +56,7 @@
 
               <div class="col-span-6 sm:col-span-3">
                 <label for="card_id" class="block  font-semibold text-gray-700">Kart Id</label>
-                <input type="text" name="card_id" id="card_id" autocomplete="family-name" class="mt-1 hover:ring-1 hover:ring-indigo-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
+                <input type="number" name="card_id" id="card_id" autocomplete="family-name" class="mt-1 hover:ring-1 hover:ring-indigo-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" required>
               </div>
              
             </div>

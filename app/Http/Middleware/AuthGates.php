@@ -16,10 +16,11 @@ class AuthGates
 {
     public function handle($request, Closure $next)
     {
-        $user = Auth::user();
+        
+        $user = Auth::user(); // current user.
 
-        if ($user) {
-            $roles            = Role::with('permissions')->get();
+        if ($user) { 
+            $roles = Role::with('permissions')->get();
             $permissionsArray = [];
 
             foreach ($roles as $role) {

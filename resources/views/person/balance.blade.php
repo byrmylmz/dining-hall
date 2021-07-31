@@ -11,19 +11,17 @@
   <div class="md:grid md:grid-cols-2 md:gap-6">
     <div class="mt-5 md:mt-0 md:col-span-2">
      
-      <form action="#" method="POST">
+      <form action="{{ route('person.updateBalance',$balance->id) }}" method="POST">
+        @csrf
+        @method('PATCH')
         <div class="shadow overflow-hidden sm:rounded-md">
           <div class="px-4 py-5 bg-white sm:p-6">
             <div class="grid grid-cols-6 gap-6">
               
               <div class="col-span-6 sm:col-span-6">
                 <label for="title" class="block  font-semibold text-gray-700">Bakiye</label>
-               
-                    
-                <input value="" type="text" name="title" id="title" autocomplete="family-name" class="mt-1 hover:ring-1 hover:ring-indigo-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-            
+                <input value="{{ $balance->balance }}" type="text" name="balance" id="balance" autocomplete="family-name" class="mt-1 hover:ring-1 hover:ring-indigo-500 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
-
             </div>
           </div>
           <div class="flex justify-between px-4 py-3 bg-gray-50  sm:px-6 ">

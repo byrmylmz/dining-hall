@@ -53,6 +53,8 @@ class TaskController extends Controller
 
     public function update(UpdateTaskRequest $request, Task $task)
     {
+        abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        
         $task->update($request->validated());
 
         return redirect()->route('tasks.index');

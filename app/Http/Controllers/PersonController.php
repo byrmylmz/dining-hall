@@ -7,6 +7,9 @@ use App\Models\company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\Gate;
+use Symfony\Component\HttpFoundation\Response;
+
 class PersonController extends Controller
 {
     /**
@@ -16,10 +19,11 @@ class PersonController extends Controller
      */
     public function index()
     {   
+        abort_if(Gate::denies('people_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $persons=person::all();
         return view('person.index',compact('persons'));
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -27,10 +31,11 @@ class PersonController extends Controller
      */
     public function create()
     {
+        abort_if(Gate::denies('people_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $companies=company::all();
         return view('person.create',compact('companies'));
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -39,10 +44,11 @@ class PersonController extends Controller
      */
     public function store(Request $request)
     {
+        abort_if(Gate::denies('people_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         person::create($request->all()+['users_id'=>auth()->id(),'companies_id'=>$request->company]);
         return redirect()->route('person.index');
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -53,7 +59,7 @@ class PersonController extends Controller
     {
         //
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -63,10 +69,11 @@ class PersonController extends Controller
     public function edit(person $person)
     {
         
+        abort_if(Gate::denies('people_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $companies=company::all();
         return view('person.edit',compact('person','companies'));
     }
-
+    
     /**
      * Update the specified resource in storage.
      *
@@ -76,10 +83,11 @@ class PersonController extends Controller
      */
     public function update(Request $request, person $person)
     {
+        abort_if(Gate::denies('people_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $person->update($request->all()+['users_id'=>auth()->id(),'companies_id'=>$request->company]);
         return redirect()->route('person.index');
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -88,13 +96,16 @@ class PersonController extends Controller
      */
     public function destroy(person $person)
     {
+        abort_if(Gate::denies('people_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $person->delete();
         return redirect()->route('person.index');
     }
-
-
+    
+    
     public function balance($id)
-    {   
+    {       
+        //dd($id);
+        abort_if(Gate::denies('people_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         $balance=DB::table('people')->where('id',$id)->first();
         return view('person.balance',compact('balance'));
     }
@@ -106,8 +117,13 @@ class PersonController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-    public function addBalance(person $person)
-    {
-       // $person->update()
+    public function updateBalance(request $request, $id)
+    {  
+        
+        abort_if(Gate::denies('people_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        $data=array();
+        $data['balance']=$request->balance;
+        DB::table('people')->where('id',$id)->update($data);
+        return redirect()->route('person.index');    
     }
 }
