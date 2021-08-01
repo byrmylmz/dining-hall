@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\person;
+use Illuminate\Support\Facades\DB;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +19,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::Get('/balance-control/{card_id}', function($card_id){
+    
+    $persons=person::where('card_id',$card_id)->get();
+  
+     foreach ($persons as $person) {
+         if($person->balance <=0){
+            return response('Yetersiz Bakiye Lütfen Bakiye Yükleyin');
+         } else{
+            $persons=DB::table('people')->decrement('balance',1);
+            return response('İşlem Başarıyla Tamamlandı');
+         }        
+     }
+   
+  
 });
 
 
