@@ -29,7 +29,7 @@ Route::Get('/balance-control/{card_id}', function($card_id){
          if($person->balance <=0){
             return response('Yetersiz Bakiye Lütfen Bakiye Yükleyin');
          } else{
-            $persons=DB::table('people')->decrement('balance',1);
+            $persons=DB::table('people')->select(DB::raw('cast(balance as integer'))->decrement('balance',1);
             return response('İşlem Başarıyla Tamamlandı');
          }        
      }
