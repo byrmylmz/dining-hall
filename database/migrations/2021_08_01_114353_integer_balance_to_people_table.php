@@ -15,7 +15,7 @@ class IntegerBalanceToPeopleTable extends Migration
     public function up()
     {
         Schema::table('people', function (Blueprint $table) {
-            DB::statement("ALTER TABLE people MODIFY balance INTEGER ");
+            DB::statement("ALTER people assets ALTER COLUMN balance TYPE INTEGER ");
             
         });
     }
